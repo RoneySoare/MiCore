@@ -1,0 +1,27 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class EX001 {
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digie um nome o seu arquivo: ");
+        String arquivo = scanner.nextLine();
+
+        try (FileWriter writer = new FileWriter(arquivo, true)) {
+            System.out.println("Digite algum texto: (Digite sair para finalizar)");
+            String linha;
+
+            while (!(linha = scanner.nextLine()).equalsIgnoreCase("sair")) {
+             writer.write(linha + "/n");
+            }
+            System.out.println("Texto adicionado");
+            
+        } catch (IOException e) {
+            System.out.println("Descupe não entedemos, tente novamente" + e.getMessage());
+        }
+
+        scanner.close();
+    }
+}
