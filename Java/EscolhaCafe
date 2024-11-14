@@ -1,0 +1,54 @@
+
+import java.util.Scanner;
+
+public class Cofe {
+    public String menu;
+
+    public void Cofe(String menu){
+        this.menu = menu;
+    }
+
+    public void Conta(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Escolha uma opção a seguir: ");
+        System.out.println("Digite 1 para Café Coado");
+        System.out.println("Digite 2 para Café Coado com Leite");
+        System.out.println("Digite 3 para Café Expresso");
+        System.out.println("Digite 4 para Capuccino");
+        System.out.println("Digite 5 para Chocolate Quente");
+        System.out.println("Digite 6 para Chocolate ao Leite");
+
+        int opcao = scanner.nextInt();
+
+        switch (opcao) {
+            case 1:
+                System.out.println("O valor é de R$1,50");
+                break;
+            case 2:
+                System.out.println("O valor é de R$2,00");
+                break;
+            case 3:
+                System.out.println("O valor é de R$4,00");
+                break;
+            case 4:
+                System.out.println("O valor é de R$4,50");
+                break;
+            case 5:
+                System.out.println("O valor é de R$4,00");
+                break;
+            case 6:
+                System.out.println("O valor é de R$4,50");
+                break;
+        }
+
+        scanner.close();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cofe cofe = new Cofe();
+
+        cofe.Conta();
+    }
+}
